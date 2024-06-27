@@ -1,0 +1,183 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block title %}ホーム{% endblock %}
+
+
+<!-- ナビゲーションバー -->
+{% block content-navbar %}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid z-3">
+    <a class="navbar-brand" href="{% url 'myapp:home' %}">
+      <img src="{% static 'images/R Photo-logo.png' %}" class="" style="width: min-content; height: 100px;" alt="">
+    </a>
+    <button type="button" class="navbar-toggler border-0 shadow-none pb-3" data-bs-toggle="collapse" data-bs-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Navber" style="font-family: serif;">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">ホーム</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">リンク</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'myapp:SiteInfo' %}">サイトについて</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'myapp:top' %}" class="nav-link" href="#" >ログアウト</a> 
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              フォトコレクション
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'myapp:SpringPhoto' %}">Spring(春)</a></li>
+              <li><a class="dropdown-item" href="{% url 'myapp:SummerPhoto' %}">Summer(夏)</a></li>
+              <li><a class="dropdown-item" href="{% url 'myapp:AutumnPhoto' %}">Autumn(秋)</a></li>
+              <li><a class="dropdown-item" href="{% url 'myapp:WinterPhoto' %}">Winter(冬)</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <!-- <li><a class="dropdown-item" href="#">その他</a></li> -->
+            </ul>
+          </li>
+        </li>
+      </ul>
+        <!-- <form class="d-flex" role="search">
+          <input type="search" class="form-control me-2" placeholder="検索..." aria-label="検索...">
+          <button type="submit" class="btn btn-outline-success flex-shrink-0">検索</button>
+        </form> -->
+      </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{% endblock %}
+<!-- ナビゲーションバー終了 -->
+
+{% block content %} 
+<div class="position-absolute rounded-3 d-block">
+  <div class="container-fluid">
+    <figure class="text-sm-start fst-italic display-5"style="position: absolute; top: 10vh; color: rgba(255, 255, 255, 0.809); writing-mode: vertical-rl; text-shadow: 1px 1px 3px rgb(0, 0, 0); font-family: YuGothic;">
+      <blockquote class="blockquote">
+          <h2 class="h2">
+          日々撮影した写真を
+          <br>気まぐれにあげています！</h2>
+      </blockquote>
+    </figure>
+      <img src="{% static 'images/P1015666.JPG' %}" class="img-fluid" alt="">
+  </div>
+  <h2 class="text-center">New
+    <small class="fs-6" style="font-family: YuGothic;">({% now "Y/m/d" %})</small>
+  </h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <div class="card">
+              <img src="{% static 'images/DSC_2041.JPG' %}" class="card-img-top" alt="..."></a>
+          <div class="card-body">
+              <small>-title-</small>
+              <h5 class="card-title">Starting off the new year</h5>
+              <small>-content-</small>
+              <p class="card-text">With this first sunrise, a new year begins.</p>
+              <a href="{% static 'images/DSC_2041.JPG' %}" class="btn"><span>Zoom</span></a>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="" class="card-link text-decoration-none">Card link</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="card-link text-decoration-none">Another link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+              <img src="{% static 'images/DSC_0052.JPG' %}" class="card-img-top" alt="..."></a>
+          <div class="card-body">
+              <small>-title-</small>
+              <h5 class="card-title">strange space</h5>
+              <small>-content-</small>
+              <p class="card-text">A mysterious structure standing in a corner of a park.</p>
+              <a href="{% static 'images/DSC_0052.JPG' %}" class="btn"><span>Zoom</span></a>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="#" class="card-link text-decoration-none">Card link</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="card-link text-decoration-none">Another link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <a href="">
+              <img src="{% static 'images/DSC_0172.JPG' %}" class="card-img-top" alt=""></a>
+          <div class="card-body">
+              <small>-title-</small>
+              <h5 class="card-title">title</h5>
+              <small>-content-</small>
+              <p class="card-text">///</p>
+              <a href="#" class="btn"><span>Zoom</span></a>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="#" class="card-link text-decoration-none">Card link</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="card-link text-decoration-none">Another link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    <small class="" style="font-family: sans-serif; color: #000000;">Copyright ©R's Photo</small>
+</div>
+
+<!-- ボタン -->
+<style>
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 350px; /* ボタン幅 */
+    height: 3.5em; /* ボタン高さ */
+    background: #fff; /* 背景色 */
+    position: relative;
+}
+
+.btn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3.5em;
+    background: #fff; /* 背景色 */
+    color: #000; /* 文字色 */
+    font-weight: bold; /* 文字の太さ */
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    box-shadow: 0px 5px 12px #cad4e2, -6px -6px 12px #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    transition-duration: 0.2s;
+}
+
+.btn:hover span {
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 4px #CAD4E2, -2px -2px 4px #FFF;
+  
+}
+</style>
+{% endblock %}
+
+
+
+
+<!-- <p>{{ user.username }}さん、こんにちは。</p> -->  

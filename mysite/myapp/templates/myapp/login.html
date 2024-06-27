@@ -1,0 +1,41 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block title %}ログイン{% endblock %}
+
+
+
+{% block content-header %}
+<div class="img-responsive" style="position: absolute; top: 0; left: 0;">
+    <img src="{% static 'images/R Photo-logo.png' %}" class="" style="width: auto; height: 20vh;" alt="">
+</div>
+<div class="img-responsive">
+    <img class="img-fluid" src="{% static 'images/DSC_2157.JPG' %}" alt="" style="width: 100vw; height: 100vh;">
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid" style="position: absolute; top: 28.5vh;">
+    <form class="text-center" action="" style="font-family: serif;" method="POST">
+        {% csrf_token %}
+        <h3 class="" style="color: #ffffff;">
+        {{ form.non_field_errors }}
+        {% for field in form %}
+            {{ field.label }}
+            <br>
+            {{ field }}
+            <br>
+            {{ field.error }}
+        {% endfor %}
+        <br>
+        </h3>
+        <div class="text-center col">
+            <button type="submit" class="btn btn-outline-light">ログイン</button>
+            <a href="{% url 'myapp:top' %}" class="btn btn-outline-light" role="button">戻る</a>
+        </div>
+    </form>
+</div> 
+<div class="container-fluid"style="position: absolute; top: 95vh; left: 0vw;">
+    <small class="" style="font-family: sans-serif; color: #ffffff;">Copyright ©R's Photo</small>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+/* home.html */
+.blockquote {
+    animation-duration: 3.5s;
+    animation-name: slidein;
+}
+
+@media screen and (max-width:468px) {
+    .h2 {
+        font-size: 15px;
+        margin-top: -30px;
+    }
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 200%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+
+
+
+

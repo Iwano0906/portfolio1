@@ -1,0 +1,45 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block title %}R's Photo Liblary{% endblock %}
+
+
+{% block content-header %} 
+<div class="img-responsive" style="position: absolute; top: 0; left: 0;">
+    <img src="{% static 'images/R Photo-logo.png' %}" class="" style="width: auto; height: 20vh;" alt="">
+</div>
+<div class="img-responsive">
+    <img class="img-fluid" src="{% static 'images/DSC_0028.jpg' %}" alt="" style="width: 100vw; height: 100vh;">
+</div>
+{% endblock %} 
+
+{% block content %}
+<div class="container-fluid"style="position: absolute; top: 28.5vh;">
+    <p class="text-center" style="color: rgba(250, 235, 215, 0.379); font-family: initial; font-size: 4.58vw;">
+        This is the first page of my 
+        <br>photography life that began 
+        <br>with a camera I came across 
+        <br>by chance about four years ago.
+    </p>
+</div> 
+<div class="container-fluid" style="position: absolute; top: 70vh;">
+    <div class="text-center">
+        <a href="{% url 'myapp:login' %}" class="btn btn-outline-light">ログイン</a> 
+    </div>
+</div>
+<div class="container-fluid"style="position: absolute; top: 95vh; left: 0vw;">
+    <small class="" style="font-family: sans-serif; color: #ffffff;">Copyright ©R's Photo</small>
+</div>
+
+
+{% endblock %}   
+
+
+
+
+
+
+
+
+
+
+
